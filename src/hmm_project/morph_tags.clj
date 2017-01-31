@@ -1,12 +1,28 @@
 ;;NN
 (def suffix_tags
   (set {
-    {:lemma "keit" :pos "NN" :position "E"}
-    {:lemma "heit" :pos "NN" :position "E"}
-  	{:lemma "tum" :pos "NN" :position "E"}
-  	{:lemma "ung" :pos "NN" :position "E"}
-  	{:lemma "schaft" :pos "NN" :position "E"}
-  	{:lemma "gang" :pos "NN" :position "E"}
+				{:lemma "keit" :pos "NN" :position "E"}
+				{:lemma "heit" :pos "NN" :position "E"}
+				{:lemma "tum" :pos "NN" :position "E"}
+				{:lemma "ung" :pos "NN" :position "E"}
+				{:lemma "schaft" :pos "NN" :position "E"}
+				{:lemma "gang" :pos "NN" :position "E"}
+				{:lemma "keit" :pos "NN" :position "E"}
+				{:lemma "nis" :pos "NN" :position "E"}
+				{:lemma "chen" :pos "NN" :position "E"}
+				{:lemma "ling" :pos "NN" :position "E"}
+				{:lemma "erich" :pos "NN" :position "E"}
+				{:lemma "erchen" :pos "NN" :position "E"}
+				{:lemma "ler" :pos "NN" :position "E"}
+				{:lemma "el" :pos "NN" :position "E"}
+				{:lemma "land" :pos "NN" :position "E"}
+				{:lemma "heiten" :pos "NN" :position "E"}
+				{:lemma "tümer" :pos "NN" :position "E"}
+				{:lemma "ungen" :pos "NN" :position "E"}
+				{:lemma "schaften" :pos "NN" :position "E"}
+				{:lemma "gänge" :pos "NN" :position "E"}
+				{:lemma "keiten" :pos "NN" :position "E"}
+				{:lemma "nisse" :pos "NN" :position "E"}
   })
 )
 
