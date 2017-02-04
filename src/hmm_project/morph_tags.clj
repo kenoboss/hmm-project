@@ -54,12 +54,12 @@
       {:pos "V"{:lemma "hinter" :position "A" }{ :lemma "en" :position "E"} }
       {:pos "V"{:lemma "über" :position "A" }{ :lemma "en" :position "E"} }
       {:pos "V"{:lemma "unter" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "er":position "A" }{ :lemma "en" :position "E"} }
+      {:pos "V"{:lemma "er" :position "A" }{ :lemma "en" :position "E"} }
       {:lemma "eln" :position "E" :pos "V"}
       {:lemma "igen" :position "E" :pos "V"}
-      {:lemma "ern" :position "E" :pos"V"}
+      {:lemma "ern" :position "E" :pos "V"}
       {:lemma "ieren" :position "E" :pos "V"}
-      {:lemma "isieren" :position "E" :pos"V"}
+      {:lemma "isieren" :position "E" :pos "V"}
 
       ;; ADJ
       {:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "er" :position "E"} }
