@@ -43,12 +43,16 @@
   (set
     [
       ;; V
-      {:pos "V" {:lemma "ver" :position "A"}{:lemma "en" :position "E"} }
       {:pos "V"{:lemma "be" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "be" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "V"{:lemma "be" :position "A" }{ :lemma "ern" :position "E"} }
+      {:pos "V"{:lemma "en" :position "A" }{ :lemma "ieren" :position "E"} }
+      {:pos "V"{:lemma "ent" :position "A"}{:lemma "ren" :position "E"} }
+      {:pos "V"{:lemma "ent" :position "A"}{:lemma "ern" :position "E"} }
+      {:pos "V"{:lemma "in" :position "A" }{ :lemma "ieren" :position "E"} }
+      {:pos "V"{:lemma "ver" :position "A"}{:lemma "en" :position "E"} }
+      {:pos "V"{:lemma "ver" :position "A"}{:lemma "eln" :position "E"} }
+      {:pos "V"{:lemma "ver" :position "A"}{:lemma "ern" :position "E"} }
       {:pos "V"{:lemma "an" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "an" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "ent" :position "A" }{ :lemma "en" :position "E"} }
       {:pos "V"{:lemma "durch" :position "A" }{ :lemma "en" :position "E"} }
       {:pos "V"{:lemma "auf" :position "A" }{ :lemma "en" :position "E"} }
       {:pos "V"{:lemma "hinter" :position "A" }{ :lemma "en" :position "E"} }
