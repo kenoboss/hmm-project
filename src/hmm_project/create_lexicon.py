@@ -38,7 +38,7 @@ for filename in os.listdir(path):
 
 # ============= write in clj file =============
 
-target = open("output.clj", "w", encoding="utf-8")
+target = open("lexicon.clj", "w", encoding="utf-8")
 target.write("(def lexicon\n"
   "\t(set\n"
     "\t\t[\n" )
