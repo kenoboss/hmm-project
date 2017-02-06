@@ -91,7 +91,7 @@
       {:pos "V"{:lemma "über" :position "A" }{ :lemma "en" :position "E"} }
       {:pos "V"{:lemma "unter" :position "A" }{ :lemma "en" :position "E"} }
       {:pos "V"{:lemma "er" :position "A" }{ :lemma "en" :position "E"} }
-      
+
       {:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "er" :position "E"} }
     	{:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "es" :position "E"} }
     	{:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "e" :position "E"} }
@@ -109,11 +109,24 @@
 )
 
 
-;; is element in hash-set
-(defn in?
-  "true if coll contains elm"
-  [coll elm]
-  (some #(= elm %) coll))
+(defn find-in-praefix
+  [token]
+  (doseq [item praefix_tags]
+    (when (== (compare (get item :lemma ) token) 0)
+      (print (get item :pos))
+    )
+  )
+)
 
-;; simple test
-(in? suffix_tags {:lemma "heit" :pos "NN" :position "E"} )
+
+(defn find-in-suffix
+  [token]
+  (doseq [item suffix_tags]
+    (when (== (compare (get item :lemma ) token) 0)
+      (print (get item :pos))
+    )
+  )
+)
+
+
+(find-in-suffix "heit")
