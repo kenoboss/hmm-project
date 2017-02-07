@@ -14,12 +14,13 @@ class AutoVivification(dict):
             return value
 
 dictionary = AutoVivification()
+path = 'C:/Users/Kenobi/Ressourcen/TuebaDZ/9.0/corpora' # need the folder of TuebaDZ corpus
 
+wahrscheinlichkeiten = {}
 
 # ============= reading files =============
-
 def create_dictionary (filename):
-    path = 'C:/Users/Kenobi/Ressourcen/TuebaDZ/9.0/corpora' # need the folder of TuebaDZ corpus
+
     tree = etree.parse(str(path)+"/"+str(filename))
     root = tree.getroot()
 
@@ -29,20 +30,30 @@ def create_dictionary (filename):
 
         key = word
 
-    # ============= create dictionary =============
         if pos in dictionary[key]:
             dictionary[key][pos] += 1
         else:
             dictionary[key][pos] = 1
 
-
-# for filename in os.listdir(path):
-#     print(filename)
-#     create_dictionary(filename)
-filename = 't_890102_141.xml' # test with one file
-create_dictionary(filename)
+        if pos in wahrscheinlichkeiten:
+            wahrscheinlichkeiten[pos] += 1
+        else:
+            wahrscheinlichkeiten[pos] = 1
 
 
+
+index = 0
+for filename in os.listdir(path):
+    if (index < 2296):
+        print(filename)
+        create_dictionary(filename)
+    index += 1
+# filename = 't_890102_141.xml' # test with one file
+# create_dictionary(filename)
+
+print(wahrscheinlichkeiten)
+
+# not used
 def translite (token):
     token = re.sub("ö", "oe", token)
     token = re.sub("ü", "ue", token)
@@ -58,20 +69,28 @@ def translite (token):
 
 
 # ============= write in clj file =============
-
+# Bsp: "werden" (hash-map "MV" 0.3 "KOPV" 0.5)
 target = open("lexicon.clj", "w", encoding="utf-8")
 target.write("(def lexicon\n"
-  "\t'(\n" )
+  "\t(hash-map\n" )
 
 for key, value in dictionary.items():
 
-    token = translite(key)
+    #token = translite(key)
+    token = key
 
-    target.write('\t { :'+str(token)+' \'(')
+    target.write('\t\t"'+str(token)+'" (hash-map')
     for key2, value2 in dictionary[key].items():
-        target.write(' \'( {:pos "'+str(key2)+'" }, {:counter "'+str(value2)+'" }) ')
 
-    target.write(' ) }\n')
+        for k,v in wahrscheinlichkeiten.items():
 
-target.write(') )')
+            if (k == key2):
+                wahrscheinlichkeit = value2/v
+
+        target.write(' "'+str(key2)+'" '+str(wahrscheinlichkeit))
+
+    target.write(')\n')
+
+
+target.write('\t)\n )')
 target.close()
