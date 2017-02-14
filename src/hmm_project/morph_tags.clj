@@ -75,22 +75,22 @@
   (set
     [
       ;; V
-      {:pos "V"{:lemma "be" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "be" :position "A" }{ :lemma "ern" :position "E"} }
-      {:pos "V"{:lemma "en" :position "A" }{ :lemma "ieren" :position "E"} }
-      {:pos "V"{:lemma "ent" :position "A"}{:lemma "ren" :position "E"} }
-      {:pos "V"{:lemma "ent" :position "A"}{:lemma "ern" :position "E"} }
-      {:pos "V"{:lemma "in" :position "A" }{ :lemma "ieren" :position "E"} }
-      {:pos "V"{:lemma "ver" :position "A"}{:lemma "en" :position "E"} }
-      {:pos "V"{:lemma "ver" :position "A"}{:lemma "eln" :position "E"} }
-      {:pos "V"{:lemma "ver" :position "A"}{:lemma "ern" :position "E"} }
-      {:pos "V"{:lemma "an" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "durch" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "auf" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "hinter" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "über" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "unter" :position "A" }{ :lemma "en" :position "E"} }
-      {:pos "V"{:lemma "er" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "be" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "be" :position "A" }{ :lemma "ern" :position "E"} }
+      {:pos "VVFIN"{:lemma "en" :position "A" }{ :lemma "ieren" :position "E"} }
+      {:pos "VVFIN"{:lemma "ent" :position "A"}{:lemma "ren" :position "E"} }
+      {:pos "VVFIN"{:lemma "ent" :position "A"}{:lemma "ern" :position "E"} }
+      {:pos "VVFIN"{:lemma "in" :position "A" }{ :lemma "ieren" :position "E"} }
+      {:pos "VVFIN"{:lemma "ver" :position "A"}{:lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "ver" :position "A"}{:lemma "eln" :position "E"} }
+      {:pos "VVFIN"{:lemma "ver" :position "A"}{:lemma "ern" :position "E"} }
+      {:pos "VVFIN"{:lemma "an" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "durch" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "auf" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "hinter" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "über" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "unter" :position "A" }{ :lemma "en" :position "E"} }
+      {:pos "VVFIN"{:lemma "er" :position "A" }{ :lemma "en" :position "E"} }
 
       {:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "er" :position "E"} }
     	{:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "es" :position "E"} }
