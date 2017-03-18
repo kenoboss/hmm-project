@@ -14,7 +14,7 @@ class AutoVivification(dict):
             return value
 
 dictionary = AutoVivification()
-path = 'C:/Users/Kenobi/Ressourcen/TuebaDZ/9.0/corpora' # need the folder of TuebaDZ corpus
+path = 'C:/Users/Tobias/Ressourcen/TuebaDZ/9.0/corpora' # need the folder of TuebaDZ corpus
 
 wahrscheinlichkeiten = {}
 
@@ -24,27 +24,35 @@ def create_dictionary (filename):
     tree = etree.parse(str(path)+"/"+str(filename))
     root = tree.getroot()
 
-    for t in root.iter('t'):
-        pos = t.attrib['pos']
-        word = t.attrib['word']
+    body = root.iter('body')
+    for b in body:
+        sentence = b.iter('s')
+        for s in sentence:
 
-        key = word
+            graph = s.iter('graph')
+            for g in graph:
+                terminals = g.iter('t')
+                for t in terminals:
+                    pos = t.attrib['pos']
+                    word = t.attrib['word']
 
-        if pos in dictionary[key]:
-            dictionary[key][pos] += 1
-        else:
-            dictionary[key][pos] = 1
+                    key = word
 
-        if pos in wahrscheinlichkeiten:
-            wahrscheinlichkeiten[pos] += 1
-        else:
-            wahrscheinlichkeiten[pos] = 1
+                    if pos in dictionary[key]:
+                        dictionary[key][pos] += 1
+                    else:
+                        dictionary[key][pos] = 1
+
+                    if pos in wahrscheinlichkeiten:
+                        wahrscheinlichkeiten[pos] += 1
+                    else:
+                        wahrscheinlichkeiten[pos] = 1
 
 
 
 index = 0
 for filename in os.listdir(path):
-    if (index < 2296):
+    if (index < 2236):
         print(filename)
         create_dictionary(filename)
     index += 1
