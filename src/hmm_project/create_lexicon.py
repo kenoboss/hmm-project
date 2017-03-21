@@ -52,7 +52,7 @@ def create_dictionary (filename):
 
 index = 0
 for filename in os.listdir(path):
-    if (index < 2236):
+    if (index < 2296):
         print(filename)
         create_dictionary(filename)
     index += 1

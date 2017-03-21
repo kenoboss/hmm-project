@@ -36,7 +36,7 @@ path = 'C:/Users/Tobias/Ressourcen/TuebaDZ/9.0/corpora' # need the folder of Tue
 fileCounter = 0
 for filename in os.listdir(path):
     # iterates through the whole corpus
-    if fileCounter < 100:
+    if fileCounter < 2296:
         print(filename)
         getTokens (path, filename)
     fileCounter += 1
@@ -55,16 +55,23 @@ while index < len(words):
 
     index += 1
 
-target = open("result.txt", "w", encoding="utf-8")
+target = open("bigrams.clj", "w", encoding="utf-8")
+target.write("(def bigram (hash-map \n")
 for key, value in dictionary.items():
-    target.write(str(key)+"\t{")
+    target.write('"'+str(key)+'"'+"\t(hash-map ")
     sum = 0
     for key2, value2 in value.items():
         sum = sum + value2
+    counter = 0
     for key2, value2 in value.items():
         quot = value2 / sum
-        target.write(str(key2)+": "+str(quot)+", ")
-    target.write("}\n")
+        if counter == (len(value.items()) - 1):
+            target.write('"'+str(key2)+'" '+str(quot))
+        else:
+            target.write('"'+str(key2)+'" '+str(quot)+', ')
+        counter += 1
+    target.write(")\n")
+target.write(")")
 
 
 target.close()
