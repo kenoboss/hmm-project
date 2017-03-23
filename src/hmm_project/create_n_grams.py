@@ -57,6 +57,7 @@ while index < len(words):
 
 target = open("Github/hmm-project/src/hmm_project/bigrams.clj", "w", encoding="utf-8")
 target.write("(ns viterbi.bigrams)\n")
+
 target.write("(def bigram (hash-map \n")
 for key, value in dictionary.items():
     target.write('"'+str(key)+'"'+"\t(hash-map ")

@@ -14,7 +14,9 @@ class AutoVivification(dict):
             return value
 
 dictionary = AutoVivification()
+
 path = '/media/kenobi/5C56715E56713A3A/Users/Kenobi/Ressourcen/TuebaDZ/9.0/corpora' # need the folder of TuebaDZ corpus
+
 
 wahrscheinlichkeiten = {}
 
