@@ -1,0 +1,3 @@
+target/classes/META-INF/maven/hmm-project/hmm-project/pom.properties
+*.extract-native-dependencies
+.nrepl-port
