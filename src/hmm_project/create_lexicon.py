@@ -14,7 +14,7 @@ class AutoVivification(dict):
             return value
 
 dictionary = AutoVivification()
-path = 'C:/Users/Kenobi/Ressourcen/TuebaDZ/9.0/corpora' # need the folder of TuebaDZ corpus
+path = '/media/kenobi/5C56715E56713A3A/Users/Kenobi/Ressourcen/TuebaDZ/9.0/corpora' # need the folder of TuebaDZ corpus
 
 wahrscheinlichkeiten = {}
 
@@ -24,22 +24,58 @@ def create_dictionary (filename):
     tree = etree.parse(str(path)+"/"+str(filename))
     root = tree.getroot()
 
-    for t in root.iter('t'):
-        pos = t.attrib['pos']
-        word = t.attrib['word']
+    body = root.iter('body')
+    for b in body:
+        sentence = b.iter('s')
+        for s in sentence:
 
-        key = word
+            pos = "<s>"
+            word = "<s>"
 
-        if pos in dictionary[key]:
-            dictionary[key][pos] += 1
-        else:
-            dictionary[key][pos] = 1
+            key = word
 
-        if pos in wahrscheinlichkeiten:
-            wahrscheinlichkeiten[pos] += 1
-        else:
-            wahrscheinlichkeiten[pos] = 1
+            if pos in dictionary[key]:
+                dictionary[key][pos] += 1
+            else:
+                dictionary[key][pos] = 1
 
+            if pos in wahrscheinlichkeiten:
+                wahrscheinlichkeiten[pos] += 1
+            else:
+                wahrscheinlichkeiten[pos] = 1
+
+            graph = s.iter('graph')
+            for g in graph:
+                terminals = g.iter('t')
+                for t in terminals:
+                    pos = t.attrib['pos']
+                    word = t.attrib['word']
+
+                    key = word
+
+                    if pos in dictionary[key]:
+                        dictionary[key][pos] += 1
+                    else:
+                        dictionary[key][pos] = 1
+
+                    if pos in wahrscheinlichkeiten:
+                        wahrscheinlichkeiten[pos] += 1
+                    else:
+                        wahrscheinlichkeiten[pos] = 1
+            pos = "</s>"
+            word = "</s>"
+
+            key = word
+
+            if pos in dictionary[key]:
+                dictionary[key][pos] += 1
+            else:
+                dictionary[key][pos] = 1
+
+            if pos in wahrscheinlichkeiten:
+                wahrscheinlichkeiten[pos] += 1
+            else:
+                wahrscheinlichkeiten[pos] = 1
 
 
 index = 0
@@ -55,31 +91,24 @@ print(wahrscheinlichkeiten)
 
 # not used
 def translite (token):
-    token = re.sub("ö", "oe", token)
-    token = re.sub("ü", "ue", token)
-    token = re.sub("ä", "ae", token)
-    token = re.sub("Ö", "Oe", token)
-    token = re.sub("Ü", "Ue", token)
-    token = re.sub("Ä", "Ae", token)
-    token = re.sub("ß", "ss", token)
-
-    token = re.sub("'", "XX", token)
+    token = token.replace('"', '\\"')
 
     return token
 
 
 # ============= write in clj file =============
 # Bsp: "werden" (hash-map "MV" 0.3 "KOPV" 0.5)
-target = open("lexicon.clj", "w", encoding="utf-8")
+target = open("Github/hmm-project/src/hmm_project/lexicon.clj", "w", encoding="utf-8")
+target.write("(ns viterbi.lexicon)\n")
 target.write("(def lexicon\n"
   "\t(hash-map\n" )
 
 for key, value in dictionary.items():
 
-    #token = translite(key)
-    token = key
+    token = translite(key)
+    # token = key
 
-    target.write('\t\t"'+str(token)+'" (hash-map')
+    target.write('\t\t(apply str "'+str(token)+'") (hash-map')
     for key2, value2 in dictionary[key].items():
 
         for k,v in wahrscheinlichkeiten.items():
