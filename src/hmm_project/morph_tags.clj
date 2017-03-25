@@ -112,8 +112,9 @@
 (defn find-in-praefix
   [token]
   (doseq [item praefix_tags]
-    (when (== (compare (get item :lemma ) token) 0)
-      (print (get item :pos))
+    (when (re-matches (re-pattern (str (get item :lemma) #"[A-Z]*[a-z]*"))token)
+    (print (get item :pos))
+      )
     )
   )
 )
@@ -122,8 +123,8 @@
 (defn find-in-suffix
   [token]
   (doseq [item suffix_tags]
-    (when (== (compare (get item :lemma ) token) 0)
-      (print (get item :pos))
+    (when (re-matches (re-pattern (str #"[A-Z]*[a-z]*" (get item :lemma)))token)
+    (print (get item :pos))
     )
   )
 )
