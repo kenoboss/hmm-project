@@ -24,49 +24,49 @@
 				{:lemma "keiten" :pos "NN" :position "E"}
 				{:lemma "nisse" :pos "NN" :position "E"}
 
-        {:lemma "eln" :position "E" :pos "V"}
-        {:lemma "igen" :position "E" :pos "V"}
-        {:lemma "ern" :position "E" :pos "V"}
-        {:lemma "ieren" :position "E" :pos "V"}
-        {:lemma "isieren" :position "E" :pos "V"}
+        {:lemma "eln" :position "E" :pos "VVFIN"}
+        {:lemma "igen" :position "E" :pos "VVFIN"}
+        {:lemma "ern" :position "E" :pos "VVFIN"}
+        {:lemma "ieren" :position "E" :pos "VVFIN"}
+        {:lemma "isieren" :position "E" :pos "VVFIN"}
 
-        {:lemma "bar" :position "E" :pos "ADJ"}
-        {:lemma "en" :position "E" :pos "ADJ"}
-        {:lemma "rig" :position "E" :pos "ADJ"}
-        {:lemma "ern" :position "E" :pos "ADJ"}
-        {:lemma "haft" :position "E" :pos "ADJ"} ;;Abgrenzung zu "schaft"
-        {:lemma "ig" :position "E" :pos "ADJ"}
-        {:lemma "isch" :position "E" :pos "ADJ"}
-        {:lemma "lich" :position "E" :pos "ADJ"}
-        {:lemma "los" :position "E" :pos "ADJ"}
-        {:lemma "mäßig" :position "E" :pos "ADJ"}
-        {:lemma "sam" :position "E" :pos "ADJ"}
+        {:lemma "bar" :position "E" :pos "ADJA"}
+        {:lemma "en" :position "E" :pos "ADJA"}
+        {:lemma "rig" :position "E" :pos "ADJA"}
+        {:lemma "ern" :position "E" :pos "ADJA"}
+        {:lemma "haft" :position "E" :pos "ADJA"} ;;Abgrenzung zu "schaft"
+        {:lemma "ig" :position "E" :pos "ADJA"}
+        {:lemma "isch" :position "E" :pos "ADJA"}
+        {:lemma "lich" :position "E" :pos "ADJA"}
+        {:lemma "los" :position "E" :pos "ADJA"}
+        {:lemma "mäßig" :position "E" :pos "ADJA"}
+        {:lemma "sam" :position "E" :pos "ADJA"}
         ;;Kardinalzahlen
-        {:lemma "erlei" :position "E" :pos "ADJ"}
-        {:lemma "fach" :position "E" :pos "ADJ"}
+        {:lemma "erlei" :position "E" :pos "ADJA"}
+        {:lemma "fach" :position "E" :pos "ADJA"}
   ])
 )
 
 (def praefix_tags
   (set [
-        {:lemma "ab" :position "A" :pos "ADJ"}
-        {:lemma "aller" :position "A" :pos "ADJ"}
-        {:lemma "außer" :position "A" :pos "ADJ"}
-        {:lemma "binnen" :position "A" :pos "ADJ"}
-        {:lemma "erz" :position "A" :pos "ADJ"}
-        {:lemma "ge" :position "A" :pos "ADJ"}
-        {:lemma "grund" :position "A" :pos "ADJ"}
-        {:lemma "inner" :position "A" :pos "ADJ"}
-        {:lemma "miss" :position "A" :pos "ADJ"}
-        {:lemma "nach" :position "A" :pos "ADJ"}
-        {:lemma "ober" :position "A" :pos "ADJ"}
-        {:lemma "über" :position "A" :pos "ADJ"}
-        {:lemma "un" :position "A" :pos "ADJ"}
-        {:lemma "unter" :position "A" :pos "ADJ"}
-        {:lemma "ur" :position "A" :pos "ADJ"}
-        {:lemma "vor" :position "A" :pos "ADJ"}
-        {:lemma "wider" :position "A" :pos "ADJ"}
-        {:lemma "zwischen" :position "A" :pos "ADJ"}
+        {:lemma "ab" :position "A" :pos "ADJA"}
+        {:lemma "aller" :position "A" :pos "ADJA"}
+        {:lemma "außer" :position "A" :pos "ADJA"}
+        {:lemma "binnen" :position "A" :pos "ADJA"}
+        {:lemma "erz" :position "A" :pos "ADJA"}
+        {:lemma "ge" :position "A" :pos "ADJA"}
+        {:lemma "grund" :position "A" :pos "ADJA"}
+        {:lemma "inner" :position "A" :pos "ADJA"}
+        {:lemma "miss" :position "A" :pos "ADJA"}
+        {:lemma "nach" :position "A" :pos "ADJA"}
+        {:lemma "ober" :position "A" :pos "ADJA"}
+        {:lemma "über" :position "A" :pos "ADJA"}
+        {:lemma "un" :position "A" :pos "ADJA"}
+        {:lemma "unter" :position "A" :pos "ADJA"}
+        {:lemma "ur" :position "A" :pos "ADJA"}
+        {:lemma "vor" :position "A" :pos "ADJA"}
+        {:lemma "wider" :position "A" :pos "ADJA"}
+        {:lemma "zwischen" :position "A" :pos "ADJA"}
   ])
 )
 
@@ -92,18 +92,18 @@
       {:pos "VVFIN"{:lemma "unter" :position "A" }{ :lemma "en" :position "E"} }
       {:pos "VVFIN"{:lemma "er" :position "A" }{ :lemma "en" :position "E"} }
 
-      {:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "er" :position "E"} }
-    	{:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "es" :position "E"} }
-    	{:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "e" :position "E"} }
-    	{:pos "ADJ"{:lemma "ver" :position "A" }{ :lemma "en" :position "E"} }
-    	{:pos "ADJ"{:lemma "ver" :position "A" }{ :lemma "er" :position "E"} }
-    	{:pos "ADJ"{:lemma "ver" :position "A" }{ :lemma "es" :position "E"} }
-      { :pos "ADJ" {:lemma "ent" :position "A" }{ :lemma "er" :position "E"} }
-    	{:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "es" :position "E"} }
-    	{:pos "ADJ"{:lemma "ent" :position "A" }{ :lemma "e" :position "E"} }
-    	{:pos "ADJ"{:lemma "ver" :position "A" }{ :lemma "en" :position "E"} }
-    	{:pos "ADJ"{:lemma "ver" :position "A" }{ :lemma "er" :position "E"}}
-    	{:pos "ADJ"{:lemma "ver" :position "A" }{ :lemma "es" :position "E"} }
+      {:pos "ADJA"{:lemma "ent" :position "A" }{ :lemma "er" :position "E"} }
+    	{:pos "ADJA"{:lemma "ent" :position "A" }{ :lemma "es" :position "E"} }
+    	{:pos "ADJA"{:lemma "ent" :position "A" }{ :lemma "e" :position "E"} }
+    	{:pos "ADJA"{:lemma "ver" :position "A" }{ :lemma "en" :position "E"} }
+    	{:pos "ADJA"{:lemma "ver" :position "A" }{ :lemma "er" :position "E"} }
+    	{:pos "ADJA"{:lemma "ver" :position "A" }{ :lemma "es" :position "E"} }
+      {:pos "ADJA" {:lemma "ent" :position "A" }{ :lemma "er" :position "E"} }
+    	{:pos "ADJA"{:lemma "ent" :position "A" }{ :lemma "es" :position "E"} }
+    	{:pos "ADJA"{:lemma "ent" :position "A" }{ :lemma "e" :position "E"} }
+    	{:pos "ADJA"{:lemma "ver" :position "A" }{ :lemma "en" :position "E"} }
+    	{:pos "ADJA"{:lemma "ver" :position "A" }{ :lemma "er" :position "E"}}
+    	{:pos "ADJA"{:lemma "ver" :position "A" }{ :lemma "es" :position "E"} }
     ]
   )
 )
