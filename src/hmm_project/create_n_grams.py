@@ -77,21 +77,3 @@ target.write(") )")
 
 
 target.close()
-
-
-
-
-
-# def bigrams (words):
-#     # writes the bigrams line for line in a result file
-#     target = open("result.txt", "w", encoding="utf-8")
-#     index = 1
-#     while index < len(words):
-#         prev = words[index - 1]
-#         current = words[index]
-#         target.write(str(prev)+" "+str(current)+"\n")
-#         index += 1
-#
-#     target.close()
-#
-# bigrams(words)
