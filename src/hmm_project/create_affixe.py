@@ -76,8 +76,8 @@ for filename in os.listdir(path):
 print(wahrscheinlichkeiten)
 
 target = open("Github/hmm-project/src/hmm_project/morphs.clj", "w", encoding="utf-8")
-target.write("(ns viterbi.lexicon)\n")
-target.write("(def lexicon\n"
+target.write("(ns viterbi.morphatags)\n")
+target.write("(def morphs\n"
   "\t(hash-map\n" )
 
 test = {}
